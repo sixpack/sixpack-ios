@@ -7,7 +7,61 @@
 //
 
 #import "SixpackClient.h"
+#import "SGSixpackClient.h"
+
 
 @implementation SixpackClient
+
+#pragma mark Public Methods
+
++ (void)connectToHost:(NSString *)url {
+    [self connectToHost:url timout:0.5];
+}
+
++ (void)connectToHost:(NSString *)url
+               timout:(NSTimeInterval)seconds {
+    [self.sharedClient connectToHost:url timout:seconds];
+}
+
+/*
+ Call setupExperiment once for each experiment after calling connectToHost and before participating
+ */
++ (void)setupExperiment:(NSString *)experiment
+           alternatives:(NSArray *)alternatives {
+    [self.sharedClient setupExperiment:experiment
+                          alternatives:alternatives];
+}
+
+
+/*==============================================
+ Participating in Experiments
+ ==============================================*/
+
+/*
+ Call participate to participate in an experiment.  The chosen alternative is returned in the onChoose block.
+ */
++ (void)participateIn:(NSString *)experiment
+             onChoose:(void(^)(NSString *chosenAlternative))block {
+    [self.sharedClient participateIn:experiment
+                            onChoose:block];
+}
+
+/*
+ Call convert with the experiment name once the goal is achieved
+ */
++ (void)convert:(NSString *)experiment {
+    [self.sharedClient convert:experiment];
+}
+
+#pragma mark Private Methods
+
++ (SGSixpackClient *)sharedClient {
+    static SGSixpackClient *sharedSixpackClient = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedSixpackClient = SGSixpackClient.new;
+    });
+    return sharedSixpackClient;
+}
 
 @end

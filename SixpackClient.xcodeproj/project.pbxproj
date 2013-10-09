@@ -16,6 +16,8 @@
 		1ABF64221805927F0090A117 /* libSixpackClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ABF640A1805927E0090A117 /* libSixpackClient.a */; };
 		1ABF64281805927F0090A117 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1ABF64261805927F0090A117 /* InfoPlist.strings */; };
 		1ABF642A1805927F0090A117 /* SixpackClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABF64291805927F0090A117 /* SixpackClientTests.m */; };
+		1ABF64381805A55C0090A117 /* SGSixpackClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABF64371805A55C0090A117 /* SGSixpackClient.m */; };
+		1ABF64391805A55C0090A117 /* SGSixpackClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABF64371805A55C0090A117 /* SGSixpackClient.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		1ABF64251805927F0090A117 /* SixpackClientTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SixpackClientTests-Info.plist"; sourceTree = "<group>"; };
 		1ABF64271805927F0090A117 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1ABF64291805927F0090A117 /* SixpackClientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SixpackClientTests.m; sourceTree = "<group>"; };
+		1ABF64361805A55C0090A117 /* SGSixpackClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGSixpackClient.h; sourceTree = "<group>"; };
+		1ABF64371805A55C0090A117 /* SGSixpackClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGSixpackClient.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				1ABF64121805927E0090A117 /* SixpackClient.h */,
-				1ABF64141805927E0090A117 /* SixpackClient.m */,
+				1ABF64331805934A0090A117 /* Private */,
 				1ABF64101805927E0090A117 /* Supporting Files */,
 			);
 			path = SixpackClient;
@@ -141,6 +145,16 @@
 				1ABF64261805927F0090A117 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1ABF64331805934A0090A117 /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				1ABF64141805927E0090A117 /* SixpackClient.m */,
+				1ABF64361805A55C0090A117 /* SGSixpackClient.h */,
+				1ABF64371805A55C0090A117 /* SGSixpackClient.m */,
+			);
+			name = Private;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,6 +238,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1ABF64381805A55C0090A117 /* SGSixpackClient.m in Sources */,
 				1ABF64151805927E0090A117 /* SixpackClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -232,6 +247,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1ABF64391805A55C0090A117 /* SGSixpackClient.m in Sources */,
 				1ABF642A1805927F0090A117 /* SixpackClientTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,9 +347,11 @@
 		1ABF642E1805927F0090A117 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1.0;
 				DSTROOT = /tmp/SixpackClient.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SixpackClient/SixpackClient-Prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -343,9 +361,11 @@
 		1ABF642F1805927F0090A117 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1.0;
 				DSTROOT = /tmp/SixpackClient.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SixpackClient/SixpackClient-Prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
