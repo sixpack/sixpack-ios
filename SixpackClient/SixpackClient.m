@@ -29,9 +29,17 @@
 + (void)setupExperiment:(NSString *)experiment
            alternatives:(NSArray *)alternatives {
     [self.sharedClient setupExperiment:experiment
-                          alternatives:alternatives];
+                          alternatives:alternatives
+                           forceChoice:nil];
 }
 
++ (void)setupExperiment:(NSString *)experiment
+           alternatives:(NSArray *)alternatives
+            forceChoice:(NSString *)forcedChoice {
+    [self.sharedClient setupExperiment:experiment
+                          alternatives:alternatives
+                           forceChoice:forcedChoice];
+}
 
 /*==============================================
  Participating in Experiments

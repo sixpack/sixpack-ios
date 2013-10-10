@@ -34,6 +34,12 @@ Call setupExperiment once for each experiment after calling connectToHost and be
 + (void)setupExperiment:(NSString *)experiment
            alternatives:(NSArray *)alternatives;
 
+/*
+ Use this setup method to force an experiment result
+ */
++ (void)setupExperiment:(NSString *)experiment
+           alternatives:(NSArray *)alternatives
+            forceChoice:(NSString *)forcedChoice;
 
 /*==============================================
  Participating in Experiments

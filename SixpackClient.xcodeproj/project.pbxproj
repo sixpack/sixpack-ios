@@ -18,6 +18,17 @@
 		1ABF642A1805927F0090A117 /* SixpackClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABF64291805927F0090A117 /* SixpackClientTests.m */; };
 		1ABF64381805A55C0090A117 /* SGSixpackClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABF64371805A55C0090A117 /* SGSixpackClient.m */; };
 		1ABF64391805A55C0090A117 /* SGSixpackClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABF64371805A55C0090A117 /* SGSixpackClient.m */; };
+		1ABF64641806720F0090A117 /* AFNetworking in Resources */ = {isa = PBXBuildFile; fileRef = 1ABF64631806720F0090A117 /* AFNetworking */; };
+		1ABF64671806723A0090A117 /* SGSixpackExperiment.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABF64661806723A0090A117 /* SGSixpackExperiment.m */; };
+		1ABF64681806723A0090A117 /* SGSixpackExperiment.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABF64661806723A0090A117 /* SGSixpackExperiment.m */; };
+		1ABF646B1806AFEC0090A117 /* SGParticipateOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABF646A1806AFEC0090A117 /* SGParticipateOperation.m */; };
+		1ABF646C1806AFEC0090A117 /* SGParticipateOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABF646A1806AFEC0090A117 /* SGParticipateOperation.m */; };
+		1ABF646F1806B1740090A117 /* SGNetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABF646E1806B1740090A117 /* SGNetworkQueue.m */; };
+		1ABF64701806B1740090A117 /* SGNetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABF646E1806B1740090A117 /* SGNetworkQueue.m */; };
+		1ABF64751806BF3C0090A117 /* SGPrefetchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABF64741806BF3C0090A117 /* SGPrefetchOperation.m */; };
+		1ABF64761806BF3C0090A117 /* SGPrefetchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABF64741806BF3C0090A117 /* SGPrefetchOperation.m */; };
+		1ABF64791806BF5D0090A117 /* SGConvertOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABF64781806BF5D0090A117 /* SGConvertOperation.m */; };
+		1ABF647A1806BF5D0090A117 /* SGConvertOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABF64781806BF5D0090A117 /* SGConvertOperation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +68,18 @@
 		1ABF64291805927F0090A117 /* SixpackClientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SixpackClientTests.m; sourceTree = "<group>"; };
 		1ABF64361805A55C0090A117 /* SGSixpackClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGSixpackClient.h; sourceTree = "<group>"; };
 		1ABF64371805A55C0090A117 /* SGSixpackClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGSixpackClient.m; sourceTree = "<group>"; };
+		1ABF64631806720F0090A117 /* AFNetworking */ = {isa = PBXFileReference; lastKnownFileType = folder; name = AFNetworking; path = AFNetworking/AFNetworking; sourceTree = SOURCE_ROOT; };
+		1ABF64651806723A0090A117 /* SGSixpackExperiment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGSixpackExperiment.h; sourceTree = "<group>"; };
+		1ABF64661806723A0090A117 /* SGSixpackExperiment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGSixpackExperiment.m; sourceTree = "<group>"; };
+		1ABF64691806AFEC0090A117 /* SGParticipateOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGParticipateOperation.h; sourceTree = "<group>"; };
+		1ABF646A1806AFEC0090A117 /* SGParticipateOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGParticipateOperation.m; sourceTree = "<group>"; };
+		1ABF646D1806B1740090A117 /* SGNetworkQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGNetworkQueue.h; sourceTree = "<group>"; };
+		1ABF646E1806B1740090A117 /* SGNetworkQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGNetworkQueue.m; sourceTree = "<group>"; };
+		1ABF64711806BAA50090A117 /* SGSixpackOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGSixpackOperation.h; sourceTree = "<group>"; };
+		1ABF64731806BF3C0090A117 /* SGPrefetchOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPrefetchOperation.h; sourceTree = "<group>"; };
+		1ABF64741806BF3C0090A117 /* SGPrefetchOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGPrefetchOperation.m; sourceTree = "<group>"; };
+		1ABF64771806BF5D0090A117 /* SGConvertOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGConvertOperation.h; sourceTree = "<group>"; };
+		1ABF64781806BF5D0090A117 /* SGConvertOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGConvertOperation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +139,7 @@
 			children = (
 				1ABF64121805927E0090A117 /* SixpackClient.h */,
 				1ABF64331805934A0090A117 /* Private */,
+				1ABF64621805BAA80090A117 /* ThirdParty */,
 				1ABF64101805927E0090A117 /* Supporting Files */,
 			);
 			path = SixpackClient;
@@ -153,8 +177,35 @@
 				1ABF64141805927E0090A117 /* SixpackClient.m */,
 				1ABF64361805A55C0090A117 /* SGSixpackClient.h */,
 				1ABF64371805A55C0090A117 /* SGSixpackClient.m */,
+				1ABF64651806723A0090A117 /* SGSixpackExperiment.h */,
+				1ABF64661806723A0090A117 /* SGSixpackExperiment.m */,
+				1ABF646D1806B1740090A117 /* SGNetworkQueue.h */,
+				1ABF646E1806B1740090A117 /* SGNetworkQueue.m */,
+				1ABF64721806BADF0090A117 /* NetworkOperations */,
 			);
 			name = Private;
+			sourceTree = "<group>";
+		};
+		1ABF64621805BAA80090A117 /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				1ABF64631806720F0090A117 /* AFNetworking */,
+			);
+			name = ThirdParty;
+			sourceTree = "<group>";
+		};
+		1ABF64721806BADF0090A117 /* NetworkOperations */ = {
+			isa = PBXGroup;
+			children = (
+				1ABF64711806BAA50090A117 /* SGSixpackOperation.h */,
+				1ABF64691806AFEC0090A117 /* SGParticipateOperation.h */,
+				1ABF646A1806AFEC0090A117 /* SGParticipateOperation.m */,
+				1ABF64731806BF3C0090A117 /* SGPrefetchOperation.h */,
+				1ABF64741806BF3C0090A117 /* SGPrefetchOperation.m */,
+				1ABF64771806BF5D0090A117 /* SGConvertOperation.h */,
+				1ABF64781806BF5D0090A117 /* SGConvertOperation.m */,
+			);
+			name = NetworkOperations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1ABF64281805927F0090A117 /* InfoPlist.strings in Resources */,
+				1ABF64641806720F0090A117 /* AFNetworking in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,8 +290,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1ABF646B1806AFEC0090A117 /* SGParticipateOperation.m in Sources */,
+				1ABF64671806723A0090A117 /* SGSixpackExperiment.m in Sources */,
+				1ABF64791806BF5D0090A117 /* SGConvertOperation.m in Sources */,
+				1ABF64751806BF3C0090A117 /* SGPrefetchOperation.m in Sources */,
 				1ABF64381805A55C0090A117 /* SGSixpackClient.m in Sources */,
 				1ABF64151805927E0090A117 /* SixpackClient.m in Sources */,
+				1ABF646F1806B1740090A117 /* SGNetworkQueue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,8 +304,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1ABF646C1806AFEC0090A117 /* SGParticipateOperation.m in Sources */,
+				1ABF64681806723A0090A117 /* SGSixpackExperiment.m in Sources */,
+				1ABF647A1806BF5D0090A117 /* SGConvertOperation.m in Sources */,
+				1ABF64761806BF3C0090A117 /* SGPrefetchOperation.m in Sources */,
 				1ABF64391805A55C0090A117 /* SGSixpackClient.m in Sources */,
 				1ABF642A1805927F0090A117 /* SixpackClientTests.m in Sources */,
+				1ABF64701806B1740090A117 /* SGNetworkQueue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
