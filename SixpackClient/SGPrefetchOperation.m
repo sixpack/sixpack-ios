@@ -22,8 +22,8 @@
         parameters[@"force"] = self.experiment.forcedAlternative;
     }
     
-    [self.experiment.operationManager GET:@"/participate"
-                               parameters:parameters
+    [self.experiment.operationManager GET:[SGSixpackOperation urlForBase:@"/participate" parameters:parameters]
+                               parameters:nil
                                   success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"Sixpack Prefetch Response: %@", responseObject);
         if (responseObject[@"alternative"]) {

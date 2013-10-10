@@ -22,7 +22,7 @@
 @property (strong) NSString *forcedAlternative;
 
 //chosenAlternative is the alternative received from the sixpack server
-@property (assign) NSString *chosenAlternative;
+@property (strong) NSString *chosenAlternative;
 
 //the unique identifier of the client
 @property (strong) NSString *clientID;

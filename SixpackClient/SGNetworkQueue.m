@@ -34,9 +34,7 @@
         return;
     }
     _running = YES;
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self popQueues];
-    });
+    [self popQueues];
 }
 
 - (void)stopQueues {
@@ -57,14 +55,15 @@
     }
     
     if (_prefetchQueue.count){
-        id <SGSixpackOperation> operation = _prefetchQueue.firstObject;
+        SGSixpackOperation *operation = _prefetchQueue.firstObject;
         [_prefetchQueue removeObject:operation];
         [operation run];
     } else if (_experimentQueue.count) {
-        id <SGSixpackOperation> operation = _experimentQueue.firstObject;
+        SGSixpackOperation *operation = _experimentQueue.firstObject;
         [_experimentQueue removeObject:operation];
         [operation run];
     } else {
+        _running = NO;
         return; //no more work to do
     }
     

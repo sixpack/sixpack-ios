@@ -9,11 +9,5 @@
 #import <Foundation/Foundation.h>
 #import "SGSixpackOperation.h"
 
-@class SGSixpackExperiment, SGNetworkQueue;
-
-@interface SGParticipateOperation : NSObject <SGSixpackOperation>
-
-@property (weak) SGSixpackExperiment *experiment;
-@property (weak) SGNetworkQueue *networkQueue;
-
+@interface SGParticipateOperation : SGSixpackOperation
 @end

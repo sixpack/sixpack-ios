@@ -11,9 +11,5 @@
 
 @class SGSixpackExperiment, SGNetworkQueue;
 
-@interface SGPrefetchOperation : NSObject <SGSixpackOperation>
-
-@property (weak) SGSixpackExperiment *experiment;
-@property (weak) SGNetworkQueue *networkQueue;
-
+@interface SGPrefetchOperation : SGSixpackOperation
 @end

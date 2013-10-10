@@ -8,8 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol SGSixpackOperation <NSObject>
+@class SGSixpackExperiment, SGNetworkQueue;
+
+@interface SGSixpackOperation : NSObject
+
+@property (weak) SGSixpackExperiment *experiment;
+@property (weak) SGNetworkQueue *networkQueue;
 
 - (void)run;
++ (NSString *)urlForBase:(NSString *)base parameters:(NSDictionary *)parameters;
 
 @end

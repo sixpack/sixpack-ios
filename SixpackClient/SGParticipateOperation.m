@@ -15,6 +15,11 @@
 @implementation SGParticipateOperation
 
 - (void)run {
+    if (!self.experiment.chosenAlternative) {
+        NSLog(@"Sixpack Error: Attempting to participate before choosing an alternative");
+        return;
+    }
+    
     NSMutableDictionary *parameters = @{@"client_id" : self.experiment.clientID,
                                         @"experiment" : self.experiment.name,
                                         @"alternatives" : self.experiment.alternatives }.mutableCopy;
@@ -23,8 +28,8 @@
         parameters[@"force"] = self.experiment.forcedAlternative;
     }
     
-    [self.experiment.operationManager GET:@"/participate"
-                               parameters:parameters
+    [self.experiment.operationManager GET:[SGSixpackOperation urlForBase:@"/participate" parameters:parameters]
+                               parameters:nil
                                   success:^(AFHTTPRequestOperation *operation, id responseObject) {
                                       NSLog(@"Sixpack Participate Response: %@", responseObject);
                                       if (responseObject[@"alternative"]) {

@@ -29,6 +29,7 @@
 
     _operationManager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:_url]];
     _operationManager.responseSerializer = AFJSONResponseSerializer.serializer;
+    
     __weak SGSixpackClient *me = self;
     [_operationManager.reachabilityManager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
         [me networkReachabilityChanged:status];
@@ -85,6 +86,9 @@
     
     //return the prefetched alternative immediately to avoid GUI lag.
     
+    if (!experimentObj.chosenAlternative) {
+        experimentObj.chosenAlternative = experimentObj.alternatives.firstObject;
+    }
     block(experimentObj.chosenAlternative);
 }
 
@@ -130,7 +134,6 @@
         }
     }
     return _clientID;
-    
 }
 
 @end

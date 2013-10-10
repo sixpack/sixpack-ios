@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A147ABF18072FC80023D2A2 /* SGSixpackOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A147ABE18072FC80023D2A2 /* SGSixpackOperation.m */; };
+		1A147AC018072FC80023D2A2 /* SGSixpackOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A147ABE18072FC80023D2A2 /* SGSixpackOperation.m */; };
 		1ABF640E1805927E0090A117 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ABF640D1805927E0090A117 /* Foundation.framework */; };
 		1ABF64131805927E0090A117 /* SixpackClient.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1ABF64121805927E0090A117 /* SixpackClient.h */; };
 		1ABF64151805927E0090A117 /* SixpackClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABF64141805927E0090A117 /* SixpackClient.m */; };
@@ -54,6 +56,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1A147ABE18072FC80023D2A2 /* SGSixpackOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGSixpackOperation.m; sourceTree = "<group>"; };
 		1ABF640A1805927E0090A117 /* libSixpackClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSixpackClient.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ABF640D1805927E0090A117 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1ABF64111805927E0090A117 /* SixpackClient-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SixpackClient-Prefix.pch"; sourceTree = "<group>"; };
@@ -187,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				1ABF64711806BAA50090A117 /* SGSixpackOperation.h */,
+				1A147ABE18072FC80023D2A2 /* SGSixpackOperation.m */,
 				1ABF64691806AFEC0090A117 /* SGParticipateOperation.h */,
 				1ABF646A1806AFEC0090A117 /* SGParticipateOperation.m */,
 				1ABF64731806BF3C0090A117 /* SGPrefetchOperation.h */,
@@ -279,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1ABF646B1806AFEC0090A117 /* SGParticipateOperation.m in Sources */,
+				1A147ABF18072FC80023D2A2 /* SGSixpackOperation.m in Sources */,
 				1ABF64671806723A0090A117 /* SGSixpackExperiment.m in Sources */,
 				1ABF64791806BF5D0090A117 /* SGConvertOperation.m in Sources */,
 				1ABF64751806BF3C0090A117 /* SGPrefetchOperation.m in Sources */,
@@ -293,6 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1ABF646C1806AFEC0090A117 /* SGParticipateOperation.m in Sources */,
+				1A147AC018072FC80023D2A2 /* SGSixpackOperation.m in Sources */,
 				1ABF64681806723A0090A117 /* SGSixpackExperiment.m in Sources */,
 				1ABF647A1806BF5D0090A117 /* SGConvertOperation.m in Sources */,
 				1ABF64761806BF3C0090A117 /* SGPrefetchOperation.m in Sources */,

@@ -14,11 +14,16 @@
 @implementation SGConvertOperation
 
 - (void)run {
+    if (!self.experiment.chosenAlternative) {
+        NSLog(@"Sixpack Error: Attempting to convert before choosing an alternative");
+        return;
+    }
+    
     NSDictionary *parameters = @{@"client_id" : self.experiment.clientID,
                                         @"experiment" : self.experiment.name};
     
-    [self.experiment.operationManager GET:@"/convert"
-                               parameters:parameters
+    [self.experiment.operationManager GET:[SGSixpackOperation urlForBase:@"/convert" parameters:parameters]
+                               parameters:nil
                                   success:^(AFHTTPRequestOperation *operation, id responseObject) {
                                       NSLog(@"Sixpack Conversion Response: %@", responseObject);
                                   } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
