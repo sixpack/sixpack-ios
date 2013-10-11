@@ -6,11 +6,11 @@
 //  Copyright (c) 2013 SeatGeek Inc. All rights reserved.
 //
 
-#import "SixpackClient.h"
+#import "Sixpack.h"
 #import "SGSixpackClient.h"
 
 
-@implementation SixpackClient
+@implementation Sixpack
 
 #pragma mark Public Methods
 

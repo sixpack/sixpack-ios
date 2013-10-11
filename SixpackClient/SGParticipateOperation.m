@@ -28,7 +28,8 @@
         parameters[@"force"] = self.experiment.forcedAlternative;
     }
     
-    [self.experiment.operationManager GET:[SGSixpackOperation urlForBase:@"/participate" parameters:parameters]
+    [self.experiment.operationManager GET:[SGSixpackOperation urlForBase:[self.experiment.url stringByAppendingString:@"participate"]
+                                                              parameters:parameters]
                                parameters:nil
                                   success:^(AFHTTPRequestOperation *operation, id responseObject) {
                                       NSLog(@"Sixpack Participate Response: %@", responseObject);

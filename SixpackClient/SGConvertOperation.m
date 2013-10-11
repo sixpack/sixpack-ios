@@ -22,7 +22,8 @@
     NSDictionary *parameters = @{@"client_id" : self.experiment.clientID,
                                         @"experiment" : self.experiment.name};
     
-    [self.experiment.operationManager GET:[SGSixpackOperation urlForBase:@"/convert" parameters:parameters]
+    [self.experiment.operationManager GET:[SGSixpackOperation urlForBase:[self.experiment.url stringByAppendingString:@"convert"]
+                                                              parameters:parameters]
                                parameters:nil
                                   success:^(AFHTTPRequestOperation *operation, id responseObject) {
                                       NSLog(@"Sixpack Conversion Response: %@", responseObject);

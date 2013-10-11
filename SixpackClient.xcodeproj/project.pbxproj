@@ -10,8 +10,8 @@
 		1A147ABF18072FC80023D2A2 /* SGSixpackOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A147ABE18072FC80023D2A2 /* SGSixpackOperation.m */; };
 		1A147AC018072FC80023D2A2 /* SGSixpackOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A147ABE18072FC80023D2A2 /* SGSixpackOperation.m */; };
 		1ABF640E1805927E0090A117 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ABF640D1805927E0090A117 /* Foundation.framework */; };
-		1ABF64131805927E0090A117 /* SixpackClient.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1ABF64121805927E0090A117 /* SixpackClient.h */; };
-		1ABF64151805927E0090A117 /* SixpackClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABF64141805927E0090A117 /* SixpackClient.m */; };
+		1ABF64131805927E0090A117 /* Sixpack.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1ABF64121805927E0090A117 /* Sixpack.h */; };
+		1ABF64151805927E0090A117 /* Sixpack.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABF64141805927E0090A117 /* Sixpack.m */; };
 		1ABF641C1805927F0090A117 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ABF641B1805927F0090A117 /* XCTest.framework */; };
 		1ABF641D1805927F0090A117 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ABF640D1805927E0090A117 /* Foundation.framework */; };
 		1ABF641F1805927F0090A117 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ABF641E1805927F0090A117 /* UIKit.framework */; };
@@ -49,7 +49,7 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				1ABF64131805927E0090A117 /* SixpackClient.h in CopyFiles */,
+				1ABF64131805927E0090A117 /* Sixpack.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,8 +60,8 @@
 		1ABF640A1805927E0090A117 /* libSixpackClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSixpackClient.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ABF640D1805927E0090A117 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1ABF64111805927E0090A117 /* SixpackClient-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SixpackClient-Prefix.pch"; sourceTree = "<group>"; };
-		1ABF64121805927E0090A117 /* SixpackClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SixpackClient.h; sourceTree = "<group>"; };
-		1ABF64141805927E0090A117 /* SixpackClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SixpackClient.m; sourceTree = "<group>"; };
+		1ABF64121805927E0090A117 /* Sixpack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Sixpack.h; sourceTree = "<group>"; };
+		1ABF64141805927E0090A117 /* Sixpack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Sixpack.m; sourceTree = "<group>"; };
 		1ABF641A1805927F0090A117 /* SixpackClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SixpackClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ABF641B1805927F0090A117 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		1ABF641E1805927F0090A117 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -138,7 +138,7 @@
 		1ABF640F1805927E0090A117 /* SixpackClient */ = {
 			isa = PBXGroup;
 			children = (
-				1ABF64121805927E0090A117 /* SixpackClient.h */,
+				1ABF64121805927E0090A117 /* Sixpack.h */,
 				1ABF64331805934A0090A117 /* Private */,
 				1ABF64101805927E0090A117 /* Supporting Files */,
 			);
@@ -174,7 +174,7 @@
 		1ABF64331805934A0090A117 /* Private */ = {
 			isa = PBXGroup;
 			children = (
-				1ABF64141805927E0090A117 /* SixpackClient.m */,
+				1ABF64141805927E0090A117 /* Sixpack.m */,
 				1ABF64361805A55C0090A117 /* SGSixpackClient.h */,
 				1ABF64371805A55C0090A117 /* SGSixpackClient.m */,
 				1ABF64651806723A0090A117 /* SGSixpackExperiment.h */,
@@ -288,7 +288,7 @@
 				1ABF64791806BF5D0090A117 /* SGConvertOperation.m in Sources */,
 				1ABF64751806BF3C0090A117 /* SGPrefetchOperation.m in Sources */,
 				1ABF64381805A55C0090A117 /* SGSixpackClient.m in Sources */,
-				1ABF64151805927E0090A117 /* SixpackClient.m in Sources */,
+				1ABF64151805927E0090A117 /* Sixpack.m in Sources */,
 				1ABF646F1806B1740090A117 /* SGNetworkQueue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
