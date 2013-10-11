@@ -14,8 +14,7 @@
 
 @property (strong) AFHTTPRequestOperationManager *operationManager;
 
-- (void)connectToHost:(NSString *)url
-               timout:(NSTimeInterval)seconds;
+- (void)connectToHost:(NSString *)url;
 
 - (void)setupExperiment:(NSString *)experiment
            alternatives:(NSArray *)alternatives

@@ -14,16 +14,13 @@
 @implementation SGSixpackClient
 {
     NSString *_url;
-    NSTimeInterval _timeout;
     NSString *_clientID;
     NSMutableDictionary *_experiments;
     SGNetworkQueue *_networkQueue;
 }
 
-- (void)connectToHost:(NSString *)url
-               timout:(NSTimeInterval)seconds {
+- (void)connectToHost:(NSString *)url {
     _url = url;
-    _timeout = seconds;
     _experiments = NSMutableDictionary.new;
     _networkQueue = SGNetworkQueue.new;
 

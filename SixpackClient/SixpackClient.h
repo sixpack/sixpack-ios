@@ -22,11 +22,7 @@ Url should be the location of your sixpack mountpoint
 eg. http://my.sixpack.host:8129/sixpack/mount/point
 */
 
-// Connect with the default timeout of 0.5 seconds.
 + (void)connectToHost:(NSString *)url;
-
-+ (void)connectToHost:(NSString *)url
-               timout:(NSTimeInterval)seconds;
 
 /*
 Call setupExperiment once for each experiment after calling connectToHost and before participating

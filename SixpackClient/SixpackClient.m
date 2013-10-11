@@ -15,12 +15,7 @@
 #pragma mark Public Methods
 
 + (void)connectToHost:(NSString *)url {
-    [self connectToHost:url timout:0.5];
-}
-
-+ (void)connectToHost:(NSString *)url
-               timout:(NSTimeInterval)seconds {
-    [self.sharedClient connectToHost:url timout:seconds];
+    [self.sharedClient connectToHost:url];
 }
 
 /*
