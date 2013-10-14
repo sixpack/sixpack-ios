@@ -6,7 +6,7 @@
 #
 Pod::Spec.new do |s|
   s.name         = "Sixpack-iOS"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "iOS client library for Sixpack AB testing."
   s.homepage     = "http://www.seatgeek.com"
   s.license      = 'BSD 2 License'
