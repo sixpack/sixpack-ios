@@ -1,9 +1,9 @@
 Pod::Spec.new do |s|
   s.name         = "Sixpack-iOS"
-  s.version      = "0.0.3"
+  s.version      = "1.0"
   s.summary      = "iOS client library for Sixpack AB testing."
   s.homepage     = "http://www.seatgeek.com"
-  s.license      = 'BSD 2 License'
+  s.license      = 'FreeBSD License'
   s.author       = { "James Van-As" => "james@seatgeek.com" }
   s.source       = { :git => 'https://github.com/seatgeek/sixpack-ios.git', :tag => '0.0.3' }
 
