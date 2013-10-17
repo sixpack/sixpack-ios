@@ -15,6 +15,7 @@ Pod::Spec.new do |s|
   s.dependency     'AFNetworking', '>= 2.0.0'
 
   s.subspec 'Private' do |ss|
+    ss.prefix_header_file = 'SixpackClient-Prefix.pch'
     ss.source_files = 'Classes/Private/*.{m,h}'
   end
 end

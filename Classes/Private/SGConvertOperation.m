@@ -15,7 +15,7 @@
 
 - (void)run {
     if (!self.experiment.chosenAlternative) {
-        NSLog(@"Sixpack Error: Attempting to convert before choosing an alternative");
+        SGSixpackDebugLog(@"Sixpack Error: Attempting to convert before choosing an alternative");
         return;
     }
     
@@ -26,14 +26,14 @@
                                                               parameters:parameters]
                                parameters:nil
                                   success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                                      NSLog(@"Sixpack Conversion Response: %@", responseObject);
+                                      SGSixpackDebugLog(@"Sixpack Conversion Response: %@", responseObject);
                                   } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                                      NSLog(@"Sixpack Conversion Error: %@", error);
+                                      SGSixpackDebugLog(@"Sixpack Conversion Error: %@", error);
                                       if (self.experiment.operationManager.reachabilityManager.reachable) {
                                           //give up
                                       } else {
                                           //add ourselves back to the queue.  Try again later.
-                                          NSLog(@"Network appears to be offline. Queuing Conversion for later");
+                                          SGSixpackDebugLog(@"Network appears to be offline. Queuing Conversion for later");
                                           [self.networkQueue addConversionOperationFor:self.experiment];
                                       }
                                   }];

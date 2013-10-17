@@ -9,18 +9,16 @@
 #import "Sixpack.h"
 #import "SGSixpackClient.h"
 
+BOOL __SGSixpackDebugLog_;
 
 @implementation Sixpack
 
-#pragma mark Public Methods
+#pragma mark setup
 
 + (void)connectToHost:(NSString *)url {
     [self.sharedClient connectToHost:url];
 }
 
-/*
- Call setupExperiment once for each experiment after calling connectToHost and before participating
- */
 + (void)setupExperiment:(NSString *)experiment
            alternatives:(NSArray *)alternatives {
     [self.sharedClient setupExperiment:experiment
@@ -36,27 +34,31 @@
                            forceChoice:forcedChoice];
 }
 
-/*==============================================
- Participating in Experiments
- ==============================================*/
+#pragma mark participation
 
-/*
- Call participate to participate in an experiment.  The chosen alternative is returned in the onChoose block.
- */
 + (void)participateIn:(NSString *)experiment
              onChoose:(void(^)(NSString *chosenAlternative))block {
     [self.sharedClient participateIn:experiment
                             onChoose:block];
 }
 
-/*
- Call convert with the experiment name once the goal is achieved
- */
 + (void)convert:(NSString *)experiment {
     [self.sharedClient convert:experiment];
 }
 
-#pragma mark Private Methods
+#pragma mark helper methods
+
++ (NSString *)chosenAlternativeFor:(NSString *)experiment {
+    return [self.sharedClient chosenAlternativeFor:experiment];
+}
+
+
++ (BOOL)chosenAlternativeFor:(NSString *)experiment is:(NSString *)alternative {
+    return [self.sharedClient chosenAlternativeFor:experiment is:alternative];
+}
+
+
+#pragma mark private methods
 
 + (SGSixpackClient *)sharedClient {
     static SGSixpackClient *sharedSixpackClient = nil;
@@ -65,6 +67,18 @@
         sharedSixpackClient = SGSixpackClient.new;
     });
     return sharedSixpackClient;
+}
+
++ (void)enableDebugLogging:(BOOL)debugLogging {
+    __SGSixpackDebugLog_ = debugLogging;
+}
+
++ (void)initialize {
+#ifdef DEBUG
+    __SGSixpackDebugLog_ = YES;
+#else
+    __SGSixpackDebugLog_ = NO;
+#endif
 }
 
 @end

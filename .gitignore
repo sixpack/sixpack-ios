@@ -1,0 +1,10 @@
+.DS_Store
+*.swp
+*~.nib
+
+build/
+
+*.pbxuser
+xcuserdata
+*.xcuserstate
+SixpackClient.xcodeproj/project.xcworkspace/xcuserdata/*

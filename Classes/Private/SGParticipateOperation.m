@@ -16,7 +16,7 @@
 
 - (void)run {
     if (!self.experiment.chosenAlternative) {
-        NSLog(@"Sixpack Error: Attempting to participate before choosing an alternative");
+        SGSixpackDebugLog(@"Sixpack Error: Attempting to participate before choosing an alternative");
         return;
     }
     
@@ -32,12 +32,12 @@
                                                               parameters:parameters]
                                parameters:nil
                                   success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                                      NSLog(@"Sixpack Participate Response: %@", responseObject);
+                                      SGSixpackDebugLog(@"Sixpack Participate Response: %@", responseObject);
                                       if (responseObject[@"alternative"]) {
                                           self.experiment.chosenAlternative = responseObject[@"alternative"][@"name"];
                                       }
                                   } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                                      NSLog(@"Sixpack Participate Error: %@", error);
+                                      SGSixpackDebugLog(@"Sixpack Participate Error: %@", error);
                                       if (self.experiment.operationManager.reachabilityManager.reachable) {
                                           //give up
                                           if (self.experiment.forcedAlternative) {
@@ -47,7 +47,7 @@
                                           }
                                       } else {
                                           //add ourselves back to the queue.  Try again later.
-                                          NSLog(@"Network appears to be offline. Queuing Participate for later");
+                                          SGSixpackDebugLog(@"Network appears to be offline. Queuing Participate for later");
                                           [self.networkQueue addParticipateOperationFor:self.experiment];
                                       }
                                   }];

@@ -24,6 +24,11 @@ eg. http://my.sixpack.host:8129/sixpack/mount/point
 
 + (void)connectToHost:(NSString *)url;
 
+/* Turn on debug logging.  Defaults to On for DEBUG builds and Off for RELEASE builds.
+You should ensure this is off before submitting to the app store 
+*/
++ (void)enableDebugLogging:(BOOL)debugLogging;
+
 /*
 Call setupExperiment once for each experiment after calling connectToHost and before participating
 */
@@ -46,10 +51,31 @@ Call setupExperiment once for each experiment after calling connectToHost and be
  */
 + (void)participateIn:(NSString *)experiment
              onChoose:(void(^)(NSString *chosenAlternative))block;
-
 /*
  Call convert with the experiment name once the goal is achieved
  */
 + (void)convert:(NSString *)experiment;
+
+
+/*==============================================
+ Helper Methods
+ ==============================================*/
+
+/*
+ After participating in an experiment, you can retreive the chosen alternative for that experiment at any time.
+ */
++ (NSString *)chosenAlternativeFor:(NSString *)experiment;
+
+/*
+ After participating in an experiment, you can check for whether a particular alternative was chosen.
+ 
+ eg.  
+ if ([Sixpack chosenAlternativeFor:@"myExperiment" is:@"optionA"]) {
+    [self.view addSubview:self.viewA];
+ } else {
+    [self.view addSubview:self.viewB];
+ }
+ */
++ (BOOL)chosenAlternativeFor:(NSString *)experiment is:(NSString *)alternative;
 
 @end

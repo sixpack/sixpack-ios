@@ -6,4 +6,17 @@
 
 #ifdef __OBJC__
     #import <Foundation/Foundation.h>
+
+// Debug Logging
+extern BOOL __SGSixpackDebugLog_;
+
+// Debug Logging
+#define SGSixpackLog(s, ...) \
+NSLog(@"%@",[NSString stringWithFormat:(s), ##__VA_ARGS__])
+
+#define SGSixpackDebugLog(...) if(__SGSixpackDebugLog_) {SGSixpackLog(__VA_ARGS__);} else {do {} while (0);}
+
+
 #endif
+
+

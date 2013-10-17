@@ -26,12 +26,12 @@
                                                               parameters:parameters]
                                parameters:nil
                                   success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"Sixpack Prefetch Response: %@", responseObject);
+        SGSixpackDebugLog(@"Sixpack Prefetch Response: %@", responseObject);
         if (responseObject[@"alternative"]) {
             self.experiment.chosenAlternative = responseObject[@"alternative"][@"name"];
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Sixpack Prefetch Error: %@", error);
+        SGSixpackDebugLog(@"Sixpack Prefetch Error: %@", error);
         if (self.experiment.operationManager.reachabilityManager.reachable) {
             //give up
             if (self.experiment.forcedAlternative) {
@@ -41,7 +41,7 @@
             }
         } else {
             //add ourselves back to the queue.  Try again later.
-            NSLog(@"Network appears to be offline. Queuing Prefetch for later");
+            SGSixpackDebugLog(@"Network appears to be offline. Queuing Prefetch for later");
             [self.networkQueue addPrefetchOperationFor:self.experiment];
         }
     }];
