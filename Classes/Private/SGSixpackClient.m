@@ -109,10 +109,12 @@
     switch (status) {
         case AFNetworkReachabilityStatusReachableViaWiFi:
         case AFNetworkReachabilityStatusReachableViaWWAN:
+            [_networkQueue enableQueues:YES];
             [_networkQueue startQueues];
             break;
         default:
             //unreachable
+            [_networkQueue enableQueues:NO];
             [_networkQueue stopQueues];
             break;
     }

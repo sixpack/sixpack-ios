@@ -14,6 +14,7 @@
 
 - (void)startQueues;
 - (void)stopQueues;
+- (void)enableQueues:(BOOL)enabled;
 
 - (void)addPrefetchOperationFor:(SGSixpackExperiment *)experiment;
 - (void)addParticipateOperationFor:(SGSixpackExperiment *)experiment;

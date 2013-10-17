@@ -16,6 +16,7 @@
     NSMutableArray *_experimentQueue;
     NSMutableArray *_prefetchQueue;
     BOOL _running;
+    BOOL _queuesEnabled;
 }
 
 - (id)init {
@@ -23,6 +24,7 @@
     if (self) {
         _experimentQueue = NSMutableArray.new;
         _prefetchQueue = NSMutableArray.new;
+        _queuesEnabled = YES;
     }
     return self;
 }
@@ -30,7 +32,7 @@
 #pragma mark Network Queues
 //our network queue handling runs in the main thread.  Actual work is handled in AFNetworking operation queues
 - (void)startQueues {
-    if (_running) {
+    if (_running || !_queuesEnabled) {
         return;
     }
     _running = YES;
@@ -42,6 +44,10 @@
         return;
     }
     _running = NO;
+}
+
+- (void)enableQueues:(BOOL)enabled {
+    _queuesEnabled = enabled;
 }
 
 - (void)popQueues {
