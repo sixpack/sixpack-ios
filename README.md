@@ -28,14 +28,14 @@ Call `connectToHost` before any other Sixpack calls.
 Usually inside:    `application:didFinishLaunchingWithOptions:`
 
 The Url should be the location of your sixpack mountpoint:
-```
+```objective-c
 [Sixpack connectToHost:@"http://my.sixpack.host:8129/sixpack/mount/point"];
 ```
 
 **2. Set up the experiments**
 
 Call setupExperiment once for each experiment after calling `connectToHost` and before participating:
-```
+```objective-c
 [Sixpack setupExperiment:@"myExperiment"
            alternatives:@[@"optionA", @"optionB"];
 ```
@@ -43,7 +43,7 @@ Call setupExperiment once for each experiment after calling `connectToHost` and 
 **3. Participate in an experiment**
 
  Call `participate` to participate in an experiment.  The chosen alternative is returned in the `onChoose` block:
-```
+```objective-c
 [Sixpack participateIn:@"myExperiment"
              onChoose:^(NSString *chosenAlternative) {
         if ([chosenAlternative isEqualToString:@"optionA"]) {
@@ -59,24 +59,24 @@ Call setupExperiment once for each experiment after calling `connectToHost` and 
 **4. Convert**
 
 Call `convert` with the experiment name once the goal is achieved:
-```
+```objective-c
 [Sixpack convert:@"myExperiment"];
 ```
 
 ### Helper methods
 
 
- After participating in an experiment, you can retreive the chosen alternative for that experiment at any time:
-``` 
+ After participating in an experiment, you can retrieve the chosen alternative for that experiment at any time:
+```objective-c
 + (NSString *)chosenAlternativeFor:(NSString *)experiment;
 ```
 
  After participating in an experiment, you can check for whether a particular alternative was chosen:
-```
+```objective-c
 + (BOOL)chosenAlternativeFor:(NSString *)experiment is:(NSString *)alternative;
 ```
  For Example:  
-```
+```objective-c
  if ([Sixpack chosenAlternativeFor:@"myExperiment" is:@"optionA"]) {
     [self.view addSubview:self.viewA];
  } else {
@@ -87,7 +87,7 @@ Call `convert` with the experiment name once the goal is achieved:
 ### Debugging
 
  Use this setup method to force an experiment result:
-```
+```objective-c
 + (void)setupExperiment:(NSString *)experiment
            alternatives:(NSArray *)alternatives
             forceChoice:(NSString *)forcedChoice;
@@ -95,7 +95,7 @@ Call `convert` with the experiment name once the goal is achieved:
 
 You can turn on and off debug logging.  Logging defaults to On for DEBUG builds and Off for RELEASE builds.
 You should ensure this is off before submitting to the app store 
-```
+```objective-c
 + (void)enableDebugLogging:(BOOL)debugLogging;
 ```
 
