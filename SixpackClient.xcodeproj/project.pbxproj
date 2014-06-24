@@ -12,14 +12,14 @@
 		1ABF641D1805927F0090A117 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ABF640D1805927E0090A117 /* Foundation.framework */; };
 		1ABF641F1805927F0090A117 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ABF641E1805927F0090A117 /* UIKit.framework */; };
 		1ABF64221805927F0090A117 /* libSixpackClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ABF640A1805927E0090A117 /* libSixpackClient.a */; };
-		1AD3A459180C4D48000FDF58 /* SGConvertOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD3A44A180C4D48000FDF58 /* SGConvertOperation.m */; };
-		1AD3A45A180C4D48000FDF58 /* SGNetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD3A44C180C4D48000FDF58 /* SGNetworkQueue.m */; };
-		1AD3A45B180C4D48000FDF58 /* SGParticipateOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD3A44E180C4D48000FDF58 /* SGParticipateOperation.m */; };
-		1AD3A45C180C4D48000FDF58 /* SGPrefetchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD3A450180C4D48000FDF58 /* SGPrefetchOperation.m */; };
-		1AD3A45D180C4D48000FDF58 /* SGSixpackClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD3A452180C4D48000FDF58 /* SGSixpackClient.m */; };
-		1AD3A45E180C4D48000FDF58 /* SGSixpackExperiment.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD3A454180C4D48000FDF58 /* SGSixpackExperiment.m */; };
-		1AD3A45F180C4D48000FDF58 /* SGSixpackOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD3A456180C4D48000FDF58 /* SGSixpackOperation.m */; };
-		1AD3A460180C4D48000FDF58 /* Sixpack.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD3A457180C4D48000FDF58 /* Sixpack.m */; };
+		1AF75BF91959626A00E3ADC7 /* SGConvertOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF75BEB1959626A00E3ADC7 /* SGConvertOperation.m */; };
+		1AF75BFA1959626A00E3ADC7 /* SGNetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF75BED1959626A00E3ADC7 /* SGNetworkQueue.m */; };
+		1AF75BFB1959626A00E3ADC7 /* SGParticipateOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF75BEF1959626A00E3ADC7 /* SGParticipateOperation.m */; };
+		1AF75BFC1959626A00E3ADC7 /* SGPrefetchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF75BF11959626A00E3ADC7 /* SGPrefetchOperation.m */; };
+		1AF75BFD1959626A00E3ADC7 /* SGSixpackClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF75BF31959626A00E3ADC7 /* SGSixpackClient.m */; };
+		1AF75BFE1959626A00E3ADC7 /* SGSixpackExperiment.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF75BF51959626A00E3ADC7 /* SGSixpackExperiment.m */; };
+		1AF75BFF1959626A00E3ADC7 /* SGSixpackOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF75BF71959626A00E3ADC7 /* SGSixpackOperation.m */; };
+		1AF75C001959626A00E3ADC7 /* Sixpack.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF75BF81959626A00E3ADC7 /* Sixpack.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,22 +51,22 @@
 		1ABF641A1805927F0090A117 /* SixpackClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SixpackClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ABF641B1805927F0090A117 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		1ABF641E1805927F0090A117 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		1AD3A449180C4D48000FDF58 /* SGConvertOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGConvertOperation.h; sourceTree = "<group>"; };
-		1AD3A44A180C4D48000FDF58 /* SGConvertOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SGConvertOperation.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		1AD3A44B180C4D48000FDF58 /* SGNetworkQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGNetworkQueue.h; sourceTree = "<group>"; };
-		1AD3A44C180C4D48000FDF58 /* SGNetworkQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGNetworkQueue.m; sourceTree = "<group>"; };
-		1AD3A44D180C4D48000FDF58 /* SGParticipateOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGParticipateOperation.h; sourceTree = "<group>"; };
-		1AD3A44E180C4D48000FDF58 /* SGParticipateOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SGParticipateOperation.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		1AD3A44F180C4D48000FDF58 /* SGPrefetchOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPrefetchOperation.h; sourceTree = "<group>"; };
-		1AD3A450180C4D48000FDF58 /* SGPrefetchOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SGPrefetchOperation.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		1AD3A451180C4D48000FDF58 /* SGSixpackClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGSixpackClient.h; sourceTree = "<group>"; };
-		1AD3A452180C4D48000FDF58 /* SGSixpackClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SGSixpackClient.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		1AD3A453180C4D48000FDF58 /* SGSixpackExperiment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGSixpackExperiment.h; sourceTree = "<group>"; };
-		1AD3A454180C4D48000FDF58 /* SGSixpackExperiment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGSixpackExperiment.m; sourceTree = "<group>"; };
-		1AD3A455180C4D48000FDF58 /* SGSixpackOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGSixpackOperation.h; sourceTree = "<group>"; };
-		1AD3A456180C4D48000FDF58 /* SGSixpackOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGSixpackOperation.m; sourceTree = "<group>"; };
-		1AD3A457180C4D48000FDF58 /* Sixpack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sixpack.m; sourceTree = "<group>"; };
-		1AD3A458180C4D48000FDF58 /* Sixpack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sixpack.h; sourceTree = "<group>"; };
+		1AF75BEA1959626A00E3ADC7 /* SGConvertOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SGConvertOperation.h; path = "Sixpack-iOS/Private/SGConvertOperation.h"; sourceTree = SOURCE_ROOT; };
+		1AF75BEB1959626A00E3ADC7 /* SGConvertOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SGConvertOperation.m; path = "Sixpack-iOS/Private/SGConvertOperation.m"; sourceTree = SOURCE_ROOT; };
+		1AF75BEC1959626A00E3ADC7 /* SGNetworkQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SGNetworkQueue.h; path = "Sixpack-iOS/Private/SGNetworkQueue.h"; sourceTree = SOURCE_ROOT; };
+		1AF75BED1959626A00E3ADC7 /* SGNetworkQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SGNetworkQueue.m; path = "Sixpack-iOS/Private/SGNetworkQueue.m"; sourceTree = SOURCE_ROOT; };
+		1AF75BEE1959626A00E3ADC7 /* SGParticipateOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SGParticipateOperation.h; path = "Sixpack-iOS/Private/SGParticipateOperation.h"; sourceTree = SOURCE_ROOT; };
+		1AF75BEF1959626A00E3ADC7 /* SGParticipateOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SGParticipateOperation.m; path = "Sixpack-iOS/Private/SGParticipateOperation.m"; sourceTree = SOURCE_ROOT; };
+		1AF75BF01959626A00E3ADC7 /* SGPrefetchOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SGPrefetchOperation.h; path = "Sixpack-iOS/Private/SGPrefetchOperation.h"; sourceTree = SOURCE_ROOT; };
+		1AF75BF11959626A00E3ADC7 /* SGPrefetchOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SGPrefetchOperation.m; path = "Sixpack-iOS/Private/SGPrefetchOperation.m"; sourceTree = SOURCE_ROOT; };
+		1AF75BF21959626A00E3ADC7 /* SGSixpackClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SGSixpackClient.h; path = "Sixpack-iOS/Private/SGSixpackClient.h"; sourceTree = SOURCE_ROOT; };
+		1AF75BF31959626A00E3ADC7 /* SGSixpackClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SGSixpackClient.m; path = "Sixpack-iOS/Private/SGSixpackClient.m"; sourceTree = SOURCE_ROOT; };
+		1AF75BF41959626A00E3ADC7 /* SGSixpackExperiment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SGSixpackExperiment.h; path = "Sixpack-iOS/Private/SGSixpackExperiment.h"; sourceTree = SOURCE_ROOT; };
+		1AF75BF51959626A00E3ADC7 /* SGSixpackExperiment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SGSixpackExperiment.m; path = "Sixpack-iOS/Private/SGSixpackExperiment.m"; sourceTree = SOURCE_ROOT; };
+		1AF75BF61959626A00E3ADC7 /* SGSixpackOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SGSixpackOperation.h; path = "Sixpack-iOS/Private/SGSixpackOperation.h"; sourceTree = SOURCE_ROOT; };
+		1AF75BF71959626A00E3ADC7 /* SGSixpackOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SGSixpackOperation.m; path = "Sixpack-iOS/Private/SGSixpackOperation.m"; sourceTree = SOURCE_ROOT; };
+		1AF75BF81959626A00E3ADC7 /* Sixpack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Sixpack.m; path = "Sixpack-iOS/Private/Sixpack.m"; sourceTree = SOURCE_ROOT; };
+		1AF75C011959627F00E3ADC7 /* Sixpack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Sixpack.h; path = "Sixpack-iOS/Sixpack.h"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,8 +140,8 @@
 		1AD3A447180C4D48000FDF58 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				1AF75C011959627F00E3ADC7 /* Sixpack.h */,
 				1AD3A448180C4D48000FDF58 /* Private */,
-				1AD3A458180C4D48000FDF58 /* Sixpack.h */,
 			);
 			path = Classes;
 			sourceTree = SOURCE_ROOT;
@@ -149,21 +149,21 @@
 		1AD3A448180C4D48000FDF58 /* Private */ = {
 			isa = PBXGroup;
 			children = (
-				1AD3A449180C4D48000FDF58 /* SGConvertOperation.h */,
-				1AD3A44A180C4D48000FDF58 /* SGConvertOperation.m */,
-				1AD3A44B180C4D48000FDF58 /* SGNetworkQueue.h */,
-				1AD3A44C180C4D48000FDF58 /* SGNetworkQueue.m */,
-				1AD3A44D180C4D48000FDF58 /* SGParticipateOperation.h */,
-				1AD3A44E180C4D48000FDF58 /* SGParticipateOperation.m */,
-				1AD3A44F180C4D48000FDF58 /* SGPrefetchOperation.h */,
-				1AD3A450180C4D48000FDF58 /* SGPrefetchOperation.m */,
-				1AD3A451180C4D48000FDF58 /* SGSixpackClient.h */,
-				1AD3A452180C4D48000FDF58 /* SGSixpackClient.m */,
-				1AD3A453180C4D48000FDF58 /* SGSixpackExperiment.h */,
-				1AD3A454180C4D48000FDF58 /* SGSixpackExperiment.m */,
-				1AD3A455180C4D48000FDF58 /* SGSixpackOperation.h */,
-				1AD3A456180C4D48000FDF58 /* SGSixpackOperation.m */,
-				1AD3A457180C4D48000FDF58 /* Sixpack.m */,
+				1AF75BEA1959626A00E3ADC7 /* SGConvertOperation.h */,
+				1AF75BEB1959626A00E3ADC7 /* SGConvertOperation.m */,
+				1AF75BEC1959626A00E3ADC7 /* SGNetworkQueue.h */,
+				1AF75BED1959626A00E3ADC7 /* SGNetworkQueue.m */,
+				1AF75BEE1959626A00E3ADC7 /* SGParticipateOperation.h */,
+				1AF75BEF1959626A00E3ADC7 /* SGParticipateOperation.m */,
+				1AF75BF01959626A00E3ADC7 /* SGPrefetchOperation.h */,
+				1AF75BF11959626A00E3ADC7 /* SGPrefetchOperation.m */,
+				1AF75BF21959626A00E3ADC7 /* SGSixpackClient.h */,
+				1AF75BF31959626A00E3ADC7 /* SGSixpackClient.m */,
+				1AF75BF41959626A00E3ADC7 /* SGSixpackExperiment.h */,
+				1AF75BF51959626A00E3ADC7 /* SGSixpackExperiment.m */,
+				1AF75BF61959626A00E3ADC7 /* SGSixpackOperation.h */,
+				1AF75BF71959626A00E3ADC7 /* SGSixpackOperation.m */,
+				1AF75BF81959626A00E3ADC7 /* Sixpack.m */,
 			);
 			path = Private;
 			sourceTree = "<group>";
@@ -212,7 +212,7 @@
 		1ABF64021805927E0090A117 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "SeatGeek Inc.";
 			};
 			buildConfigurationList = 1ABF64051805927E0090A117 /* Build configuration list for PBXProject "SixpackClient" */;
@@ -248,14 +248,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AD3A45E180C4D48000FDF58 /* SGSixpackExperiment.m in Sources */,
-				1AD3A45C180C4D48000FDF58 /* SGPrefetchOperation.m in Sources */,
-				1AD3A45B180C4D48000FDF58 /* SGParticipateOperation.m in Sources */,
-				1AD3A45A180C4D48000FDF58 /* SGNetworkQueue.m in Sources */,
-				1AD3A459180C4D48000FDF58 /* SGConvertOperation.m in Sources */,
-				1AD3A45F180C4D48000FDF58 /* SGSixpackOperation.m in Sources */,
-				1AD3A45D180C4D48000FDF58 /* SGSixpackClient.m in Sources */,
-				1AD3A460180C4D48000FDF58 /* Sixpack.m in Sources */,
+				1AF75BFE1959626A00E3ADC7 /* SGSixpackExperiment.m in Sources */,
+				1AF75BFC1959626A00E3ADC7 /* SGPrefetchOperation.m in Sources */,
+				1AF75BFB1959626A00E3ADC7 /* SGParticipateOperation.m in Sources */,
+				1AF75BFA1959626A00E3ADC7 /* SGNetworkQueue.m in Sources */,
+				1AF75BF91959626A00E3ADC7 /* SGConvertOperation.m in Sources */,
+				1AF75BFF1959626A00E3ADC7 /* SGSixpackOperation.m in Sources */,
+				1AF75BFD1959626A00E3ADC7 /* SGSixpackClient.m in Sources */,
+				1AF75C001959626A00E3ADC7 /* Sixpack.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,7 +281,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -319,7 +318,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -388,7 +386,6 @@
 		1ABF64311805927F0090A117 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -409,7 +406,6 @@
 		1ABF64321805927F0090A117 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
