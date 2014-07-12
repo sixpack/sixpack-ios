@@ -2,8 +2,8 @@
 
 iOS client library written in Objective-C for SeatGeak's [Sixpack](http://sixpack.seatgeek.com/) ab testing framework.
 
-[![Version](http://cocoapod-badges.herokuapp.com/v/Sixpack-iOS.podspec/badge.png)](http://cocoadocs.org/docsets/Sixpack-iOS.podspec)
-[![Platform](http://cocoapod-badges.herokuapp.com/p/Sixpack-iOS.podspec/badge.png)](http://cocoadocs.org/docsets/Sixpack-iOS.podspec)
+[![Version](http://cocoapod-badges.herokuapp.com/v/Sixpack-iOS/badge.png)](http://cocoadocs.org/docsets/Sixpack-iOS)
+[![Platform](http://cocoapod-badges.herokuapp.com/p/Sixpack-iOS/badge.png)](http://cocoadocs.org/docsets/Sixpack-iOS)
 
 ## Installation
 
