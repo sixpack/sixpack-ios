@@ -1,6 +1,6 @@
 # Sixpack-iOS
 
-iOS client library written in Objective-C for SeatGeak's [Sixpack](http://github.com/seatgeek/sixpack) ab testing framework.
+iOS client library written in Objective-C for SeatGeak's [Sixpack](http://sixpack.seatgeek.com/) ab testing framework.
 
 [![Version](http://cocoapod-badges.herokuapp.com/v/Sixpack-iOS.podspec/badge.png)](http://cocoadocs.org/docsets/Sixpack-iOS.podspec)
 [![Platform](http://cocoapod-badges.herokuapp.com/p/Sixpack-iOS.podspec/badge.png)](http://cocoadocs.org/docsets/Sixpack-iOS.podspec)
