@@ -29,6 +29,10 @@
         SGSixpackDebugLog(@"Sixpack Prefetch Response: %@", responseObject);
         if (responseObject[@"alternative"]) {
             self.experiment.chosenAlternative = responseObject[@"alternative"][@"name"];
+            if (!self.experiment.setupCompleteBlockCalled && self.experiment.setupCompleteBlock) {
+                self.experiment.setupCompleteBlockCalled = YES;
+                self.experiment.setupCompleteBlock();
+            }
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         SGSixpackDebugLog(@"Sixpack Prefetch Error: %@", error);

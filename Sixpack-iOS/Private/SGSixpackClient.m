@@ -35,7 +35,10 @@
 
 - (void)setupExperiment:(NSString *)experiment
            alternatives:(NSArray *)alternatives
-            forceChoice:(NSString *)forcedChoice {
+            forceChoice:(NSString *)forcedChoice
+        onSetupComplete:(void(^)())doBlock
+ onSetupCompleteTimeout:(NSTimeInterval)timeOut {
+    
     if (!_operationManager || !_url) {
         SGSixpackDebugLog(@"SIXPACK ERROR (setupExperiment): You must first connect to the sixpack host before setting up an experiment.");
         return;
@@ -60,7 +63,17 @@
     experimentObj.clientID = self.clientID;
     experimentObj.url = _url;
     experimentObj.operationManager = _operationManager;
+    experimentObj.setupCompleteBlock = doBlock;
     _experiments[ experiment ] = experimentObj;
+
+    if (doBlock && timeOut > 0) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(timeOut * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            if (!experimentObj.setupCompleteBlockCalled) {
+                experimentObj.setupCompleteBlockCalled = YES;
+                doBlock();
+            }
+        });
+    }
     [_networkQueue addPrefetchOperationFor:experimentObj];
 }
 

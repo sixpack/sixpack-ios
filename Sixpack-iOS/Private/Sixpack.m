@@ -23,7 +23,9 @@ BOOL __SGSixpackDebugLog_;
            alternatives:(NSArray *)alternatives {
     [self.sharedClient setupExperiment:experiment
                           alternatives:alternatives
-                           forceChoice:nil];
+                           forceChoice:nil
+                       onSetupComplete:nil
+                onSetupCompleteTimeout:0];
 }
 
 + (void)setupExperiment:(NSString *)experiment
@@ -31,7 +33,32 @@ BOOL __SGSixpackDebugLog_;
             forceChoice:(NSString *)forcedChoice {
     [self.sharedClient setupExperiment:experiment
                           alternatives:alternatives
-                           forceChoice:forcedChoice];
+                           forceChoice:forcedChoice
+                       onSetupComplete:nil
+                onSetupCompleteTimeout:0];
+}
+
++ (void)setupExperiment:(NSString *)experiment
+           alternatives:(NSArray *)alternatives
+        onSetupComplete:(void(^)())doBlock
+                timeOut:(NSTimeInterval)timeOut {
+    [self.sharedClient setupExperiment:experiment
+                          alternatives:alternatives
+                           forceChoice:nil
+                       onSetupComplete:doBlock
+                onSetupCompleteTimeout:timeOut];
+}
+
++ (void)setupExperiment:(NSString *)experiment
+           alternatives:(NSArray *)alternatives
+            forceChoice:(NSString *)forcedChoice
+        onSetupComplete:(void(^)())doBlock
+                timeOut:(NSTimeInterval)timeOut {
+    [self.sharedClient setupExperiment:experiment
+                          alternatives:alternatives
+                           forceChoice:forcedChoice
+                       onSetupComplete:doBlock
+                onSetupCompleteTimeout:timeOut];
 }
 
 #pragma mark participation

@@ -18,7 +18,9 @@
 - (void)connectToHost:(NSString *)url;
 - (void)setupExperiment:(NSString *)experiment
            alternatives:(NSArray *)alternatives
-            forceChoice:(NSString *)forcedChoice;
+            forceChoice:(NSString *)forcedChoice
+        onSetupComplete:(void(^)())doBlock
+ onSetupCompleteTimeout:(NSTimeInterval)timeOut;
 
 //participation
 - (void)participateIn:(NSString *)experiment

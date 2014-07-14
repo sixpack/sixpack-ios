@@ -33,4 +33,10 @@
 //the network operation manager that will be handling communication
 @property (weak) AFHTTPRequestOperationManager *operationManager;
 
+//block to perform on successful receipt of a chosen alternative
+@property (copy) void(^setupCompleteBlock)();
+
+//block to perform on successful receipt of a chosen alternative
+@property (assign) BOOL setupCompleteBlockCalled;
+
 @end
