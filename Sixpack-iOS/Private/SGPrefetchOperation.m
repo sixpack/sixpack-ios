@@ -48,7 +48,21 @@
             SGSixpackDebugLog(@"Network appears to be offline. Queuing Prefetch for later");
             [self.networkQueue addPrefetchOperationFor:self.experiment];
         }
+        //call the completion block.  We don't want to hold up any possible GUI
+        if (!self.experiment.setupCompleteBlockCalled && self.experiment.setupCompleteBlock) {
+            self.experiment.setupCompleteBlockCalled = YES;
+            self.experiment.setupCompleteBlock();
+        }
     }];
+
+    if (self.experiment.setupCompleteBlock && self.experiment.setupCompleteBlockTimeout > 0) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(self.experiment.setupCompleteBlockTimeout * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            if (!self.experiment.setupCompleteBlockCalled) {
+                self.experiment.setupCompleteBlockCalled = YES;
+                self.experiment.setupCompleteBlock();
+            }
+        });
+    }
 }
 
 @end

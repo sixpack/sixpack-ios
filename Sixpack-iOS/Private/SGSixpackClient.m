@@ -64,16 +64,9 @@
     experimentObj.url = _url;
     experimentObj.operationManager = _operationManager;
     experimentObj.setupCompleteBlock = doBlock;
+    experimentObj.setupCompleteBlockTimeout = timeOut;
     _experiments[ experiment ] = experimentObj;
 
-    if (doBlock && timeOut > 0) {
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(timeOut * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            if (!experimentObj.setupCompleteBlockCalled) {
-                experimentObj.setupCompleteBlockCalled = YES;
-                doBlock();
-            }
-        });
-    }
     [_networkQueue addPrefetchOperationFor:experimentObj];
 }
 

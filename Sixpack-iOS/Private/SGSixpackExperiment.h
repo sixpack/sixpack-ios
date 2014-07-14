@@ -36,6 +36,9 @@
 //block to perform on successful receipt of a chosen alternative
 @property (copy) void(^setupCompleteBlock)();
 
+//timeout where if sixpack doesn't respond in then setupCompleteBlock will be called
+@property (assign) NSTimeInterval setupCompleteBlockTimeout;
+
 //block to perform on successful receipt of a chosen alternative
 @property (assign) BOOL setupCompleteBlockCalled;
 
