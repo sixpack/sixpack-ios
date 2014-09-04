@@ -84,6 +84,9 @@ BOOL __SGSixpackDebugLog_;
     return [self.sharedClient chosenAlternativeFor:experiment is:alternative];
 }
 
++ (NSString *)clientID {
+    return self.sharedClient.clientID;
+}
 
 #pragma mark private methods
 

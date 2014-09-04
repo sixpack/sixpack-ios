@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class SGSixpackClient;
+
 @interface Sixpack : NSObject
 
 /*==============================================
@@ -94,5 +96,10 @@ Call setupExperiment once for each experiment after calling connectToHost and be
  }
  */
 + (BOOL)chosenAlternativeFor:(NSString *)experiment is:(NSString *)alternative;
+
+/*
+ Returns the Sixpack client ID
+ */
++ (NSString *)clientID;
 
 @end

@@ -30,5 +30,6 @@
 //helpers
 - (NSString *)chosenAlternativeFor:(NSString *)experiment;
 - (BOOL)chosenAlternativeFor:(NSString *)experiment is:(NSString *)alternative;
+- (NSString *)clientID;
 
 @end
