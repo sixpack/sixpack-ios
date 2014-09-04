@@ -31,6 +31,7 @@
     [_operationManager.reachabilityManager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
         [me networkReachabilityChanged:status];
     }];
+    [_operationManager.reachabilityManager startMonitoring];
 }
 
 - (void)setupExperiment:(NSString *)experiment
