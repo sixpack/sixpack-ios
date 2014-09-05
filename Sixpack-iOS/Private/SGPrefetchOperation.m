@@ -21,6 +21,7 @@
     if (self.experiment.forcedAlternative) {
         parameters[@"force"] = self.experiment.forcedAlternative;
     }
+    parameters[@"prefetch"] = @"true";
     
     [self.experiment.operationManager GET:[SGSixpackOperation urlForBase:[self.experiment.url stringByAppendingString:@"participate"]
                                                               parameters:parameters]
