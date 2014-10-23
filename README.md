@@ -13,7 +13,7 @@ The recommended way to use Sixpack-iOS is through [CocoaPods](http://cocoapods.o
 Sixpack-iOS.podspec is available through [CocoaPods](http://cocoapods.org), to install
 it simply add the following line to your Podfile:
 
-    pod "Sixpack-iOS.podspec"
+    pod "Sixpack-iOS"
 
 ### Manual Installation
 If you wish to include Sixpack-iOS manually in your project, you must add the SixPackClient Xcode project to your project's workspace.
