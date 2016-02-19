@@ -8,11 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@class AFHTTPRequestOperationManager;
+@class AFHTTPSessionManager;
 
 @interface SGSixpackClient : NSObject
 
-@property (strong) AFHTTPRequestOperationManager *operationManager;
+@property (strong) AFHTTPSessionManager *sessionManager;
 
 //setup
 - (void)connectToHost:(NSString *)url;

@@ -24,14 +24,14 @@
     _experiments = NSMutableDictionary.new;
     _networkQueue = SGNetworkQueue.new;
 
-    _operationManager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:_url]];
-    _operationManager.responseSerializer = AFJSONResponseSerializer.serializer;
+    _sessionManager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:_url]];
+    _sessionManager.responseSerializer = AFJSONResponseSerializer.serializer;
     
     __weak SGSixpackClient *me = self;
-    [_operationManager.reachabilityManager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+    [_sessionManager.reachabilityManager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
         [me networkReachabilityChanged:status];
     }];
-    [_operationManager.reachabilityManager startMonitoring];
+    [_sessionManager.reachabilityManager startMonitoring];
 }
 
 - (void)setupExperiment:(NSString *)experiment
@@ -40,7 +40,7 @@
         onSetupComplete:(void(^)())doBlock
  onSetupCompleteTimeout:(NSTimeInterval)timeOut {
     
-    if (!_operationManager || !_url) {
+    if (!_sessionManager || !_url) {
         SGSixpackDebugLog(@"SIXPACK ERROR (setupExperiment): You must first connect to the sixpack host before setting up an experiment.");
         return;
     }
@@ -63,7 +63,7 @@
     experimentObj.forcedAlternative = forcedChoice;
     experimentObj.clientID = self.clientID;
     experimentObj.url = _url;
-    experimentObj.operationManager = _operationManager;
+    experimentObj.sessionManager = _sessionManager;
     experimentObj.setupCompleteBlock = doBlock;
     experimentObj.setupCompleteBlockTimeout = timeOut;
     _experiments[ experiment ] = experimentObj;

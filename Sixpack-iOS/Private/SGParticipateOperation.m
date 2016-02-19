@@ -28,17 +28,18 @@
         parameters[@"force"] = self.experiment.forcedAlternative;
     }
     
-    [self.experiment.operationManager GET:[SGSixpackOperation urlForBase:[self.experiment.url stringByAppendingString:@"participate"]
+    [self.experiment.sessionManager GET:[SGSixpackOperation urlForBase:[self.experiment.url stringByAppendingString:@"participate"]
                                                               parameters:parameters]
                                parameters:nil
-                                  success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                               progress:nil
+                                  success:^(NSURLSessionDataTask *task, id responseObject) {
                                       SGSixpackDebugLog(@"Sixpack Participate Response: %@", responseObject);
                                       if (responseObject[@"alternative"]) {
                                           self.experiment.chosenAlternative = responseObject[@"alternative"][@"name"];
                                       }
-                                  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                  } failure:^(NSURLSessionDataTask *task, NSError *error) {
                                       SGSixpackDebugLog(@"Sixpack Participate Error: %@", error);
-                                      if (self.experiment.operationManager.reachabilityManager.reachable) {
+                                      if (self.experiment.sessionManager.reachabilityManager.reachable) {
                                           //give up
                                           if (self.experiment.forcedAlternative) {
                                               self.experiment.chosenAlternative = self.experiment.forcedAlternative;

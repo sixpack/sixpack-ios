@@ -22,14 +22,15 @@
     NSDictionary *parameters = @{@"client_id" : self.experiment.clientID,
                                         @"experiment" : self.experiment.name};
     
-    [self.experiment.operationManager GET:[SGSixpackOperation urlForBase:[self.experiment.url stringByAppendingString:@"convert"]
+    [self.experiment.sessionManager GET:[SGSixpackOperation urlForBase:[self.experiment.url stringByAppendingString:@"convert"]
                                                               parameters:parameters]
                                parameters:nil
-                                  success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                               progress:nil
+                                  success:^(NSURLSessionDataTask *task, id responseObject) {
                                       SGSixpackDebugLog(@"Sixpack Conversion Response: %@", responseObject);
-                                  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                  } failure:^(NSURLSessionDataTask *task, NSError *error) {
                                       SGSixpackDebugLog(@"Sixpack Conversion Error: %@", error);
-                                      if (self.experiment.operationManager.reachabilityManager.reachable) {
+                                      if (self.experiment.sessionManager.reachabilityManager.reachable) {
                                           //give up
                                       } else {
                                           //add ourselves back to the queue.  Try again later.

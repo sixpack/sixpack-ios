@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class AFHTTPRequestOperationManager;
+@class AFHTTPSessionManager;
 
 @interface SGSixpackExperiment : NSObject
 
@@ -31,7 +31,7 @@
 @property (strong) NSString *url;
 
 //the network operation manager that will be handling communication
-@property (weak) AFHTTPRequestOperationManager *operationManager;
+@property (weak) AFHTTPSessionManager *sessionManager;
 
 //block to perform on successful receipt of a chosen alternative
 @property (copy) void(^setupCompleteBlock)();
