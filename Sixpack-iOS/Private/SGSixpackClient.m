@@ -52,7 +52,7 @@
         SGSixpackDebugLog(@"SIXPACK ERROR (setupExperiment): You must provide at least 2 alternatives.");
         return;
     }
-    if (_experiments[ experiment ]) {
+    if (_experiments[ experiment ] && !forcedChoice.length) {
         SGSixpackDebugLog(@"SIXPACK ERROR (setupExperiment): Experiment name already exists.");
         return;
     }
@@ -143,6 +143,15 @@
 }
 
 #pragma mark helpers
+
+- (NSArray <SGSixpackExperiment *> *)activeExperiments {
+    NSDictionary *experiments = _experiments.copy;
+    NSMutableArray *list = NSMutableArray.new;
+    for (NSString *experimentName in experiments) {
+        [list addObject:experiments[experimentName]];
+    }
+    return list.copy;
+}
 
 - (NSString *)chosenAlternativeFor:(NSString *)experiment {
     if (!experiment) {

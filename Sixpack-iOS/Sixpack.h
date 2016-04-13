@@ -8,7 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-@class SGSixpackClient;
+/*
+ A SGSixpackExperimentSetupComplete notification is posted on experiment setup completion.
+ The object parameter is the name of the experiment (NSString *)
+ */
+extern NSString *SGSixpackExperimentSetupComplete;
+
+@class SGSixpackClient, SGSixpackExperiment;
 
 @interface Sixpack : NSObject
 
@@ -79,6 +85,11 @@ Call setupExperiment once for each experiment after calling connectToHost and be
 /*==============================================
  Helper Methods
  ==============================================*/
+
+/*
+  Gets the current list of active experiments that have been started using setupExperiment.
+ */
++ (NSArray <SGSixpackExperiment *> *)activeExperiments;
 
 /*
  After participating in an experiment, you can retreive the chosen alternative for that experiment at any time.

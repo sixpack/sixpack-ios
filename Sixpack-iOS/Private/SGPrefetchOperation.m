@@ -10,6 +10,7 @@
 #import "AFNetworking/AFNetworking.h"
 #import "SGSixpackExperiment.h"
 #import "SGNetworkQueue.h"
+#import "Sixpack.h"
 
 @implementation SGPrefetchOperation
 
@@ -35,6 +36,9 @@
                 self.experiment.setupCompleteBlockCalled = YES;
                 self.experiment.setupCompleteBlock();
             }
+            [NSNotificationCenter.defaultCenter postNotificationName:SGSixpackExperimentSetupComplete
+                                                              object:self.experiment
+                                                            userInfo:@{@"experiment_name" : self.experiment.name}];
         }
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         SGSixpackDebugLog(@"Sixpack Prefetch Error: %@", error);
@@ -55,6 +59,9 @@
             self.experiment.setupCompleteBlockCalled = YES;
             self.experiment.setupCompleteBlock();
         }
+        [NSNotificationCenter.defaultCenter postNotificationName:SGSixpackExperimentSetupComplete
+                                                          object:self.experiment
+                                                        userInfo:@{@"experiment_name" : self.experiment.name}];
     }];
 
     if (self.experiment.setupCompleteBlock && self.experiment.setupCompleteBlockTimeout > 0) {
@@ -63,6 +70,9 @@
                 self.experiment.setupCompleteBlockCalled = YES;
                 self.experiment.setupCompleteBlock();
             }
+            [NSNotificationCenter.defaultCenter postNotificationName:SGSixpackExperimentSetupComplete
+                                                              object:self.experiment
+                                                            userInfo:@{@"experiment_name" : self.experiment.name}];
         });
     }
 }

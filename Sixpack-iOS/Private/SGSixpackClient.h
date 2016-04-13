@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class AFHTTPSessionManager;
+@class AFHTTPSessionManager, SGSixpackExperiment;
 
 @interface SGSixpackClient : NSObject
 
@@ -28,6 +28,7 @@
 - (void)convert:(NSString *)experiment;
 
 //helpers
+- (NSArray <SGSixpackExperiment *> *)activeExperiments;
 - (NSString *)chosenAlternativeFor:(NSString *)experiment;
 - (BOOL)chosenAlternativeFor:(NSString *)experiment is:(NSString *)alternative;
 - (NSString *)clientID;

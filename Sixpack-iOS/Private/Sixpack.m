@@ -9,6 +9,7 @@
 #import "Sixpack.h"
 #import "SGSixpackClient.h"
 
+NSString *SGSixpackExperimentSetupComplete = @"SGSixpackExperimentSetupComplete";
 BOOL __SGSixpackDebugLog_;
 
 @implementation Sixpack
@@ -74,6 +75,10 @@ BOOL __SGSixpackDebugLog_;
 }
 
 #pragma mark helper methods
+
++ (NSArray <SGSixpackExperiment *> *)activeExperiments {
+    return [self.sharedClient activeExperiments];
+}
 
 + (NSString *)chosenAlternativeFor:(NSString *)experiment {
     return [self.sharedClient chosenAlternativeFor:experiment];
