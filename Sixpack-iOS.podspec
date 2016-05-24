@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.homepage     = "http://sixpack.seatgeek.com"
   s.license      = 'FreeBSD License'
   s.author       = { "James Van-As" => "james@seatgeek.com" }
-  s.source       = { :git => 'https://github.com/seatgeek/sixpack-ios.git', :tag => '1.0.5' }
+  s.source       = { :git => 'https://github.com/seatgeek/sixpack-ios.git', :tag => '1.1.0' }
   s.platform     = :ios, '7.0'
   s.requires_arc = true
 
