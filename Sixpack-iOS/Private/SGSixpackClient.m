@@ -7,31 +7,18 @@
 //
 
 #import "SGSixpackClient.h"
-#import "AFNetworking/AFNetworking.h"
 #import "SGSixpackExperiment.h"
-#import "SGNetworkQueue.h"
+
+@interface SGSixpackClient ()
+@property (nonatomic, strong) NSString *hostURL;
+@property (nonatomic, strong) NSString *clientID;
+@property (nonatomic, strong) NSMutableDictionary *experiments;
+@end
 
 @implementation SGSixpackClient
-{
-    NSString *_url;
-    NSString *_clientID;
-    NSMutableDictionary *_experiments;
-    SGNetworkQueue *_networkQueue;
-}
 
 - (void)connectToHost:(NSString *)url {
-    _url = url;
-    _experiments = NSMutableDictionary.new;
-    _networkQueue = SGNetworkQueue.new;
-
-    _sessionManager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:_url]];
-    _sessionManager.responseSerializer = AFJSONResponseSerializer.serializer;
-    
-    __weak SGSixpackClient *me = self;
-    [_sessionManager.reachabilityManager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
-        [me networkReachabilityChanged:status];
-    }];
-    [_sessionManager.reachabilityManager startMonitoring];
+    self.hostURL = url;
 }
 
 - (void)setupExperiment:(NSString *)experiment
@@ -39,8 +26,7 @@
             forceChoice:(NSString *)forcedChoice
         onSetupComplete:(void(^)())doBlock
  onSetupCompleteTimeout:(NSTimeInterval)timeOut {
-    
-    if (!_sessionManager || !_url) {
+    if (!self.hostURL) {
         SGSixpackDebugLog(@"SIXPACK ERROR (setupExperiment): You must first connect to the sixpack host before setting up an experiment.");
         return;
     }
@@ -52,7 +38,7 @@
         SGSixpackDebugLog(@"SIXPACK ERROR (setupExperiment): You must provide at least 2 alternatives.");
         return;
     }
-    if (_experiments[ experiment ] && !forcedChoice.length) {
+    if (self.experiments[experiment] && !forcedChoice.length) {
         SGSixpackDebugLog(@"SIXPACK ERROR (setupExperiment): Experiment name already exists.");
         return;
     }
@@ -62,13 +48,11 @@
     experimentObj.alternatives = alternatives;
     experimentObj.forcedAlternative = forcedChoice;
     experimentObj.clientID = self.clientID;
-    experimentObj.url = _url;
-    experimentObj.sessionManager = _sessionManager;
+    experimentObj.url = self.hostURL;
     experimentObj.setupCompleteBlock = doBlock;
     experimentObj.setupCompleteBlockTimeout = timeOut;
-    _experiments[ experiment ] = experimentObj;
-
-    [_networkQueue addPrefetchOperationFor:experimentObj];
+    self.experiments[experiment] = experimentObj;
+    [experimentObj prefetchAlternative];
 }
 
 - (void)participateIn:(NSString *)experiment onChoose:(void(^)(NSString *chosenAlternative))block {
@@ -81,19 +65,13 @@
         return;
     }
     
-    SGSixpackExperiment *experimentObj = _experiments[experiment];
+    SGSixpackExperiment *experimentObj = self.experiments[experiment];
     if (!experimentObj) {
         SGSixpackDebugLog(@"SIXPACK ERROR (participateIn): You must set up an experiment before participating.");
         return;
     }
-    [_networkQueue addParticipateOperationFor:experimentObj];
-    
-    //return the prefetched alternative immediately to avoid GUI lag.
-    
-    if (!experimentObj.chosenAlternative) {
-        experimentObj.chosenAlternative = experimentObj.alternatives.firstObject;
-    }
-    block(experimentObj.chosenAlternative);
+
+    [experimentObj participateThen:block];
 }
 
 - (void)convert:(NSString *)experiment {
@@ -102,50 +80,18 @@
         return;
     }
 
-    SGSixpackExperiment *experimentObj = _experiments[experiment];
+    SGSixpackExperiment *experimentObj = self.experiments[experiment];
     if (!experimentObj) {
         SGSixpackDebugLog(@"SIXPACK ERROR (convert): You must set up an experiment before converting.");
         return;
     }
-    [_networkQueue addConversionOperationFor:experimentObj];
+    [experimentObj convert];
 }
 
-#pragma mark Network Reachability
-
-- (void)networkReachabilityChanged:(AFNetworkReachabilityStatus)status {
-    switch (status) {
-        case AFNetworkReachabilityStatusReachableViaWiFi:
-        case AFNetworkReachabilityStatusReachableViaWWAN:
-            [_networkQueue enableQueues:YES];
-            [_networkQueue startQueues];
-            break;
-        default:
-            //unreachable
-            [_networkQueue enableQueues:NO];
-            [_networkQueue stopQueues];
-            break;
-    }
-}
-
-#pragma mark client identification
-- (NSString *)clientID {
-    if (_clientID) {
-        return _clientID;
-    }
-    _clientID = [[NSUserDefaults standardUserDefaults] objectForKey:@"sixpackClientID"];
-    if (!_clientID) {
-        _clientID = [UIDevice currentDevice].identifierForVendor.UUIDString;
-        if (_clientID) {
-            [[NSUserDefaults standardUserDefaults] setValue:_clientID forKey:@"sixpackClientID"];
-        }
-    }
-    return _clientID;
-}
-
-#pragma mark helpers
+#pragma mark Helpers
 
 - (NSArray <SGSixpackExperiment *> *)activeExperiments {
-    NSDictionary *experiments = _experiments.copy;
+    NSDictionary *experiments = self.experiments.copy;
     NSMutableArray *list = NSMutableArray.new;
     for (NSString *experimentName in experiments) {
         [list addObject:experiments[experimentName]];
@@ -157,7 +103,7 @@
     if (!experiment) {
         return nil;
     }
-    SGSixpackExperiment *experimentObj = _experiments[experiment];
+    SGSixpackExperiment *experimentObj = self.experiments[experiment];
     return experimentObj.chosenAlternative;
 }
 
@@ -166,7 +112,7 @@
         SGSixpackDebugLog(@"SIXPACK ERROR (chosenAlternativeFor): Bad experiment or alternative name.  Forcing a choice.");
         return YES; //force a choice
     }
-    SGSixpackExperiment *experimentObj = _experiments[experiment];
+    SGSixpackExperiment *experimentObj = self.experiments[experiment];
     if (!experimentObj) {
         SGSixpackDebugLog(@"SIXPACK ERROR (chosenAlternativeFor): Bad experiment or alternative name.  Forcing a choice.");
         return YES;
@@ -178,6 +124,30 @@
     }
 
     return [experimentObj.chosenAlternative isEqualToString:alternative];
+}
+
+#pragma mark Getters
+
+- (NSMutableDictionary *)experiments {
+    if (_experiments) {
+        return _experiments;
+    }
+    _experiments = NSMutableDictionary.new;
+    return _experiments;
+}
+
+- (NSString *)clientID {
+    if (_clientID) {
+        return _clientID;
+    }
+    _clientID = [NSUserDefaults.standardUserDefaults objectForKey:@"sixpackClientID"];
+    if (!_clientID) {
+        _clientID = UIDevice.currentDevice.identifierForVendor.UUIDString;
+        if (_clientID) {
+            [NSUserDefaults.standardUserDefaults setValue:_clientID forKey:@"sixpackClientID"];
+        }
+    }
+    return _clientID;
 }
 
 @end

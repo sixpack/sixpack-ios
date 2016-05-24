@@ -11,5 +11,5 @@ Pod::Spec.new do |s|
 
   s.source_files = 'Sixpack-iOS/**/*.{h,m}'
   s.prefix_header_file = 'SixpackClient-Prefix.pch'
-  s.dependency     'AFNetworking', '~> 3'
+  s.dependency     'SGHTTPRequest'
 end
