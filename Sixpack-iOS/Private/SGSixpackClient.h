@@ -12,8 +12,6 @@
 
 @interface SGSixpackClient : NSObject
 
-@property (strong) AFHTTPSessionManager *sessionManager;
-
 //setup
 - (void)connectToHost:(NSString *)url;
 - (void)setupExperiment:(NSString *)experiment
